@@ -1,0 +1,35 @@
+// @import "./Meu.scss";
+
+.shape {
+  will-change: transform;
+  position: absolute;
+  border-radius: 50%;
+
+  $shapes: (#fcdadaa4: 70px,
+      #ffa5a5a4: 45px,
+      #5c969ea4: 25px,
+    );
+
+  @each $color,
+  $size in $shapes {
+    &.shape-#{index($shapes, ($color $size))} {
+      background: $color;
+      width: $size;
+      height: $size;
+      margin: (-$size/2) 0 0 (-$size/2);
+    }
+  }
+}
+
+.cursor {
+  position: fixed;
+  background: #d7385ea4;
+  width: 10px;
+  height: 10px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+}

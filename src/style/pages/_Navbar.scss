@@ -1,0 +1,262 @@
+.page-header {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  z-index: 3;
+
+  .hamburger {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transform: $ham-transform;
+    z-index: 10001;
+    outline: none;
+
+    .line {
+      width: 2rem;
+      height: 0.11rem;
+      background: $back-line;
+      transform: $line-transform;
+      margin: 5px;
+      transition: $line-transition;
+      transform-origin: $-transform-origin;
+
+      &:nth-child(2) {
+        width: 2rem;
+        transform: rotate(-45deg);
+
+        //! @media 375px
+        @include respond(mobileM) {
+          width: 1.7rem;
+        }
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        width: 1.7rem;
+      }
+    }
+  }
+
+  .nav-center {
+    display: flex;
+
+    .logo {
+      z-index: 5555;
+      position: absolute;
+      top: 2%;
+      left: 1%;
+      font-size: 0.8em;
+      line-height: normal;
+      text-decoration: none;
+
+      //! @media 1024px
+      @include respond(desktopS) {
+        font-size: 0.6em;
+      }
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: 0.5em;
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        font-size: 0.4em;
+      }
+
+      .grey-color {
+        color: #868e96;
+        // color: #12131d;
+      }
+
+      .logo-name {
+        color: #12131d;
+        font-weight: 400;
+        font-family: "Agustina Demo";
+        font-variant-ligatures: no-common-ligatures;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .navbar-links {
+    position: fixed;
+    // background: $back-nav;
+    background: $navbar-links-back;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: $navbar-lin-clip-path;
+    // -webkit-clip-path: circle(60px at 100% -11%);
+    transition: $-links-transition;
+    pointer-events: none;
+    z-index: 1000;
+
+    .nav-links {
+      position: relative;
+      top: 8%;
+      left: 0;
+      align-items: center;
+      margin: auto;
+      z-index: 11;
+      width: min-content;
+
+      //! @media 1440px
+      @include respond(desktop) {
+        top: 5%;
+      }
+
+      //! @media 1024px
+      @include respond(desktopS) {
+        top: 20%;
+      }
+
+      //! @media 768px
+      @include respond(tablet) {
+        top: 10%;
+      }
+
+      //! @media 320px
+      @include respond(mobileS) {
+        top: 14%;
+      }
+
+      li {
+        opacity: 0;
+
+        a {
+          display: block;
+          color: $-color;
+          font-size: clamp(3.5rem, 4vw, 5rem);
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          text-align: $align-center;
+          width: 17rem;
+          margin: auto;
+          padding-bottom: 75px;
+          transition: margin 0.25s;
+
+          //! @media 1382px
+          @include respond(desktop) {
+            padding-bottom: 55px;
+          }
+
+          //! @media 550px
+          @include respond(tabletM) {
+            font-size: 2.6rem;
+            width: 11rem;
+          }
+
+          //! @media 375px
+          @include respond(mobileM) {
+            font-size: 2.1rem;
+          }
+
+          svg {
+            width: 126%;
+            height: 22%;
+            position: absolute;
+            left: 50%;
+            // bottom: 0;
+            transform: translate(-50%, -32px) translateZ(0);
+            fill: none;
+            stroke: var(--stroke, var(--line));
+            stroke-linecap: round;
+            stroke-width: 2px;
+            stroke-dasharray: var(--offset, 69px) 278px;
+            stroke-dashoffset: 361px;
+            transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+
+            //! @media 1440px
+            @include respond(desktopMax) {
+              transform: translate(-50%, -35px) translateZ(0);
+              width: 89%;
+            }
+
+            //! @media 1382px
+            @include respond(desktop) {
+              transform: translate(-50%, -25px) translateZ(0);
+            }
+
+            //! @media 1024px
+            @include respond(desktopS) {
+              height: 23%;
+              transform: translate(-50%, -27px) translateZ(0);
+            }
+
+            //! @media 768px
+            @include respond(tablet) {
+              height: 22%;
+              transform: translate(-50%, -26px) translateZ(0);
+            }
+
+            //! @media 375px
+            @include respond(mobileM) {
+              transform: translate(-50%, -18px) translateZ(0);
+              height: 18%;
+            }
+          }
+
+          &:hover {
+            --spacing: 4px;
+            --stroke: var(--line-active);
+            --stroke-delay: 0.1s;
+            --offset: 180px;
+          }
+        }
+
+        &:nth-child(1) {
+          transition: all 0.5s ease 0.2s;
+        }
+
+        &:nth-child(2) {
+          transition: all 0.5s ease 0.4s;
+        }
+
+        &:nth-child(3) {
+          transition: all 0.5s ease 0.6s;
+        }
+
+        &:nth-child(4) {
+          transition: all 0.5s ease 0.7s;
+        }
+
+        &.effect-links {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .navbar_active {
+    clip-path: circle(2500px at 100% -11%);
+    -webkit-clip-path: circle(2500px at 97% -11%);
+    pointer-events: all;
+  }
+
+  .vNlG {
+    .line {
+      width: 1.3rem;
+      transform: rotate(45deg);
+      background: #252424;
+
+      &:nth-child(2) {
+        width: 1.3rem;
+        transform: rotate(-45deg);
+        background: #252424;
+      }
+    }
+  }
+}

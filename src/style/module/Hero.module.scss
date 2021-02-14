@@ -1,0 +1,243 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../base/animations";
+
+.hero_center {
+  height: 90vh;
+
+  //! @media 1440px
+  @include respond(desktopMax) {
+    height: 100vh;
+  }
+
+  //! @media 1024px
+  @include respond(desktopS) {
+    height: 90vh;
+  }
+
+  //! @media 375px
+  @include respond(mobileM) {
+    height: 100vh;
+  }
+
+  .hero__ {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 55% 44%;
+    grid-template-areas: "left right";
+    height: 100%;
+    align-items: $align-center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+
+    // padding-top: 7vh;
+    //! @media 1440px
+    @include respond(desktopMax) {
+      grid-template-columns: 60% 39%;
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+
+    //! @media 1382px
+    @include respond(desktop) {
+      height: 95%;
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      margin-left: 18px;
+      margin-right: 10px;
+    }
+
+    //! @media 768px
+    @include respond(tablet) {
+      grid-template-columns: 50% 50%;
+      grid-gap: 0;
+      margin-left: 0;
+      margin-right: 0;
+      height: 85%;
+    }
+
+    //! @media 480px
+    @include respond(mobileL) {
+      height: 90vh;
+    }
+  }
+
+  .section_center {
+    @include center;
+  }
+
+  .hero_info {
+    z-index: 50;
+
+    //! @media 768px
+    @include respond(tablet) {
+      grid-row: 2;
+      grid-column: 1 / span 2;
+      text-align: center;
+    }
+
+    .hero_title {
+      .wave_emoji {
+        animation-name: wave;
+        animation-duration: 1.8s;
+        animation-iteration-count: infinite;
+        display: inline-block;
+        transform-origin: 70% 70%;
+      }
+
+      h1 {
+        font-size: clamp(4.5rem, 7vw, 7rem);
+        // color: $h1-FontColor;
+        background: -webkit-linear-gradient(240deg,
+            #00d9ff,
+            #1ae0cc,
+            #42d5eb,
+            #5e95d9,
+            #66f);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        position: relative;
+        top: 1%;
+        right: 0;
+        margin-bottom: 5px;
+        line-height: 2;
+
+        //! @media 1440px
+        @include respond(desktopMax) {
+          font-size: clamp(4.5rem, 6vw, 6rem);
+        }
+
+        //! @media 1024px
+        @include respond(desktopS) {
+          margin-top: 0;
+        }
+
+        //! @media 768px
+        @include respond(tablet) {
+          font-size: 4.8rem;
+        }
+
+        //! @media 550px
+        @include respond(tabletM) {
+          font-size: 4rem;
+        }
+
+        //! @media 480px
+        @include respond(mobileL) {
+          font-size: 3.1rem;
+        }
+
+        //! @media 375px
+        @include respond(mobileM) {
+          font-size: 2.6rem;
+        }
+
+        //! @media 320px
+        @include respond(mobileS) {
+          font-size: 2.2rem;
+        }
+
+        span {
+          -webkit-text-fill-color: #fff;
+        }
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 4rem);
+        font-weight: 500;
+        color: $h2-FontColor;
+        margin-top: 5px;
+        position: relative;
+        top: 0;
+        right: 0;
+        line-height: 1;
+
+        // //! @media 768px
+        // @include respond(tablet) {
+        //   font-size: 2rem;
+        // }
+        //! @media 480px
+        @include respond(mobileL) {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        color: $p-FontColor;
+        font-size: clamp(1rem, 1.3vw, 2.5rem);
+        line-height: 40px;
+
+        //! @media 375px
+        @include respond(mobileM) {
+          font-size: 0.9rem;
+        }
+      }
+
+      .hero_links {
+
+        //! @media 768px
+        @include respond(tablet) {
+          width: 100%;
+          margin-top: 0;
+          justify-content: center;
+
+          li {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .hero_img {
+    width: 60%;
+    position: relative;
+    // bottom: 0;
+    // left: 30%;
+    margin: auto;
+    animation: 3s ease-in-out 0s infinite alternate none running;
+    animation-name: example;
+    z-index: 50;
+
+    //
+    @include respond(desktopMax) {
+      width: 60%;
+      bottom: 30px;
+    }
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      bottom: 50px;
+    }
+
+    //! @media 768px
+    @include respond(tablet) {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      width: 25%;
+      bottom: 5px;
+    }
+
+    //! @media 480px
+    @include respond(mobileL) {
+      width: 35%;
+    }
+
+    //! @media 375px
+    @include respond(mobileM) {
+      bottom: 25px;
+      width: 34%;
+    }
+
+    //! @media 320px
+    @include respond(mobileS) {
+      bottom: 23px;
+      width: 33%;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+/*===========
+  Variants
+============= */
+//
+/* ========= 
+  Body
+========= */
+$color-body-dark: #b9f1da;
+$back-body-dark: #141821;
+$color-body-light: #12131d;
+$back-body-light: #f6f6f6;
+$font-body: clamp(1.5rem, 4vw, 5rem);
+$align-center: center;
+
+/* ==========
+  Navbar
+============ */
+$ham-transform: rotate(180deg);
+$line-transform: rotate(45deg);
+$line-transition: all 1.5s ease-out;
+$-transform-origin: 1px;
+$back-line: #ea5455;
+$navbar-links-back: linear-gradient(to right,
+  rgb(102, 45, 140) 0%,
+  rgb(237, 30, 121) 100%);
+$navbar-lin-clip-path: circle(60px at 100% -18%);
+$-links-transition: all 1.5s ease-out;
+$-color: #fff;
+
+:root {
+  --text: #2b3044;
+  --line: #bbc1e136;
+  --line-active: #275efe;
+  --dark-shadow: 0 5px 15px rgba(136, 135, 135, 0.37);
+  --dark-ho-shadow: 0 5px 15px rgba(255, 255, 255, 0.418);
+  --radius: 0.25rem;
+  --clr-white: rgba(0, 0, 0, 0.658);
+  --transition: all 0.3s linear;
+}
+
+/* =============
+  Hero Font Color
+================ */
+$h1-FontColor: #12131d;
+$h2-FontColor: #12131d;
+$p-FontColor: rgba(18, 19, 29, 0.801);
+
+/* ================ 
+  Skills Font Color
+=================== */
+$skill-back-color: rgba(255, 255, 255, 0.05);
+$skill-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+$skill-border: 1px solid rgba(0, 0, 0, 0.1);
+$skill-backdrop: blur(15px);
+//  Font color
+
+// $colors: (
+//   #6ab8e7,
+//   #f7df1e,
+//   #ff5722,
+//   #2196f3,
+//   #663399,
+//   #cf649a,
+//   #de4c36,
+//   #161614,
+//   #4f4644,
+//   #1c78c0,
+//   #eb4a4b,
+//   #563d7c
+// );
+/* =========
+  project
+============ */
+$item-transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+$item-shadow: drop-shadow(2px 4px 6px #585858);
+$-filter: drop-shadow(0 2px 1px hsla(0, 0%, 0%, 0.5));
+$accent-color: #12131d;
+// $accent-color: #e9b949;
+$curve: cubic-bezier(0.7, 0, 0.3, 1);
+$link-back: #bbbdc2;
+$-transform: translateZ(80px) scale(0.8);
+/* ============
+  page Project
+=============== */
+
+// Colors Project
+
+$white-project: #434448;
+$haver-black-project: #f6f6f6;
+$background-project: #000000;
+$haver-text-project: #434448;
+$cursor: #e7dede;
+
+/* =========
+  Media
+============ */
+$mq-mobile-portrait: 320px !default;
+$mq-mobile-portraitM: 375px !default;
+$mq-mobile-landscape: 480px !default;
+$mq-mobile-landscapeM: 550px !default;
+$mq-tablet-portrait: 768px !default;
+$mq-tablet: 992px !default;
+$mq-desktop-S: 1024px !default;
+$mq-desktop-M: 1382px !default;
+$mq-desktop-L: 1440px !default;
+$mq-desktop-pc: 2180px !default;
+
+$breakpoint: media;

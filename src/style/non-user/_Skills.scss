@@ -1,0 +1,66 @@
+//
+/* ---------------
+Style in page My Skills
+------------------- */
+
+// .bg-grey {
+//   padding: 5rem 0;
+// }
+// .section-center {
+//   @include center;
+// }
+// .skills-center {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   column-gap: 2rem;
+
+// .skill {
+//   background: $skill-back-color;
+//   backdrop-filter: $skill-backdrop;
+//   padding: 20px 0;
+//   margin-bottom: 20px;
+//   border-radius: 5px;
+//   width: 20rem;
+//   overflow: hidden;
+//   z-index: 20;
+
+//   &:hover {
+//     box-shadow: $skill-shadow;
+//     border-top: $skill-border;
+//     border-left: $skill-border;
+//   }
+//   //
+
+//   @include respond(desktop) {
+//     width: 95%;
+//     height: 73%;
+//   }
+//   //
+// }
+// .skill-center {
+//   display: block;
+//   position: relative;
+//   align-items: center;
+//   text-align: center;
+
+//   .skills-img {
+//     width: 60px;
+//     height: 60px;
+//   }
+// }
+
+// .box-info {
+//   padding: 0;
+//   .skills-title {
+//     font-size: 24px;
+//     text-transform: capitalize;
+//     margin: 0;
+//   }
+// }
+// }
+
+// @for $i from 1 through length($colors) {
+//   h4:nth-child(#{length($colors)}n + #{$i}) {
+//     color: nth($colors, $i);
+//   }
+// }

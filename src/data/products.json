@@ -1,0 +1,72 @@
+[
+  {
+    "number": 1,
+    "title": "IC Repair Design",
+    "id": "IC-Repair-Design",
+    "ulr": "https://repairdesignic.netlify.app/",
+    "github": "https://github.com/elalfy404/React-Hooks-Project",
+    "leftLineFlex": 0,
+    "rightLineFlex": 1,
+    "thumbnailPosition": 800,
+    "offset": 200,
+    "offsetTop": 0,
+    "src": 1,
+    "icon": 1
+  },
+  {
+    "number": 2,
+    "title": "Redux API",
+    "id": "Redux-API",
+    "ulr": "https://amazing-shirley-3e043e.netlify.app/",
+    "github": "https://github.com/elalfy404/Redux-API",
+    "leftLineFlex": 3,
+    "rightLineFlex": 1,
+    "thumbnailPosition": 200,
+    "offset": -500,
+    "offsetTop": 0,
+    "src": 2,
+    "icon": 2
+  },
+  {
+    "number": 3,
+    "title": "Gams Store",
+    "id": "Gams-Store",
+    "ulr": "https://github.com/elalfy404/Games-Store",
+    "github": "https://github.com/elalfy404/Games-Store",
+    "leftLineFlex": 1,
+    "rightLineFlex": 3,
+    "thumbnailPosition": 850,
+    "offset": 300,
+    "offsetTop": 0,
+    "src": 3,
+    "icon": 3
+  },
+  {
+    "number": 4,
+    "title": "Profile",
+    "id": "Profile",
+    "ulr": "https://elalfy404.github.io/Profile-Project/",
+    "github": "https://github.com/elalfy404/Profile-Project",
+    "leftLineFlex": 3,
+    "rightLineFlex": 2,
+    "thumbnailPosition": 100,
+    "offset": -600,
+    "offsetTop": 150,
+    "src": 4,
+    "icon": 4
+  },
+  {
+    "number": 5,
+    "title": "Discing",
+    "id": "Discing",
+    "ulr": "https://relaxed-hermann-630bf0.netlify.app/",
+    "github": "https://github.com/elalfy404/Project",
+    "leftLineFlex": 1,
+    "rightLineFlex": 3,
+    "thumbnailPosition": 750,
+    "offset": 200,
+    "offsetTop": 300,
+    "src": 5,
+    "icon": 5
+  }
+]

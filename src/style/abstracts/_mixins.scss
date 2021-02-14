@@ -1,0 +1,80 @@
+/* ============
+  @Mixin
+============= */
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center {
+  width: 95vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+/* =========
+  Media
+============ */
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint==desktopPc) {
+    @media only screen and (min-width: $mq-desktop-pc) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktopMax) {
+    @media only screen and (max-width: $mq-desktop-L) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktop) {
+    @media only screen and (max-width: $mq-desktop-M) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktopS) {
+    @media only screen and (max-width: $mq-desktop-S) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==medium) {
+    @media only screen and (max-width: $mq-tablet) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==tablet) {
+    @media only screen and (max-width: $mq-tablet-portrait) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==tabletM) {
+    @media only screen and (max-width: $mq-mobile-landscapeM) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileL) {
+    @media only screen and (max-width: $mq-mobile-landscape) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileM) {
+    @media only screen and (max-width: $mq-mobile-portraitM) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileS) {
+    @media only screen and (max-width: $mq-mobile-portrait) {
+      @content;
+    }
+  }
+}

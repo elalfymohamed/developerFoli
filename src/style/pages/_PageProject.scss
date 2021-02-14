@@ -1,0 +1,391 @@
+.project-container {
+  height: 125vh;
+
+  //! @media 375px
+  @include respond(mobileM) {
+    height: 100vh;
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &.page-title {
+      position: fixed;
+      top: 4rem;
+      left: 6vw;
+      z-index: -1;
+      white-space: nowrap;
+      font-size: calc(4vw + 11rem);
+      line-height: 0.975;
+      color: #12131d;
+      opacity: 0.5;
+      @include zero;
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: calc(4vw + 7rem);
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        font-size: calc(3vw + 7rem);
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        text-align: center;
+      }
+    }
+
+    .title-offset {
+      display: block;
+      margin-left: 25%;
+      margin-top: 3%;
+      font-size: calc(4vw + 9rem);
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: calc(4vw + 6rem);
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        font-size: calc(3vw + 5rem);
+        margin-left: 15%;
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        margin-left: 0;
+        margin-top: 7%;
+      }
+    }
+  }
+
+  .section-project {
+    // position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    overflow: hidden;
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      padding-top: 60px;
+    }
+
+    //! @media 768px
+    @include respond(tablet) {
+      padding-top: 0;
+    }
+
+    .project-div {
+      height: 100vh;
+      padding-top: 25px;
+
+      .container {
+        flex-grow: 1;
+        margin: 0 auto;
+        padding: 0 32px;
+        position: relative;
+        width: auto;
+        max-width: 1152px;
+      }
+
+      .project-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 0;
+        height: 100vh;
+
+        //! @media 1382px
+        @include respond(desktop) {
+          padding: 0;
+        }
+
+        //! @media 1024px
+        @include respond(desktopS) {
+          height: 85vh;
+        }
+
+        ul {
+          width: 100%;
+          display: block;
+
+          li {
+            position: relative;
+            width: 100%;
+            // height: 115px;
+            height: 128px;
+
+            //! @media 1382px
+            @include respond(desktop) {
+              height: 105px;
+            }
+
+            a {
+              height: 100%;
+              transition: 0.2s ease-in-out;
+
+              .wrapper {
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+
+                .title {
+                  margin: 0 1rem;
+                  z-index: 10;
+
+                  &:hover {
+                    -webkit-text-fill-color: $haver-black-project;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: $haver-text-project;
+                  }
+
+                  h2 {
+                    overflow: hidden;
+                    margin: 0;
+                    font-size: clamp(1.8rem, 5vw, 5rem);
+                    font-weight: 500;
+                    color: $white-project;
+
+                    //! @media 480px
+                    @include respond(mobileL) {
+                      font-size: 2rem;
+                    }
+                  }
+                }
+
+                .thumbnail {
+                  margin-bottom: 1.4rem;
+                  overflow: hidden;
+                  position: absolute;
+                  left: 30rem;
+                  width: 7.6rem;
+                  height: 5rem;
+
+                  //! @media 550px
+                  @include respond(tabletM) {
+                    width: 5.6rem;
+                    height: 4rem;
+                  }
+
+                  //! @media 1024px
+                  @include respond(desktopS) {
+                    margin-bottom: 0.5rem;
+
+                    &.left-1 {
+                      left: 42rem !important;
+                    }
+
+                    &.left-2 {
+                      margin-bottom: 1.4rem;
+                    }
+
+                    &.left-3 {
+                      left: 40rem !important;
+                    }
+
+                    &.left-5 {
+                      left: 43rem !important;
+                    }
+                  }
+
+                  //! @media 768px
+                  @include respond(tablet) {
+                    margin-bottom: 0.5rem;
+
+                    &.left-1 {
+                      left: 32rem !important;
+                    }
+
+                    &.left-2 {
+                      margin-bottom: 1.4rem;
+                    }
+
+                    &.left-3 {
+                      left: 30rem !important;
+                    }
+
+                    &.left-5 {
+                      left: 33rem !important;
+                    }
+                  }
+
+                  //! @media 550px
+                  @include respond(tabletM) {
+                    margin-bottom: 0.5rem;
+
+                    &.left-1 {
+                      left: 18rem !important;
+                    }
+
+                    &.left-2 {
+                      margin-bottom: 1.4rem;
+                      left: 5rem !important;
+                    }
+
+                    &.left-3 {
+                      left: 17rem !important;
+                    }
+
+                    &.left-4 {
+                      left: 6rem !important;
+                    }
+
+                    &.left-5 {
+                      left: 16rem !important;
+                    }
+                  }
+
+                  //! @media 480px
+                  @include respond(mobileL) {
+                    margin-bottom: 0.5rem;
+
+                    &.left-1 {
+                      left: 17rem !important;
+                    }
+
+                    &.left-2 {
+                      margin-bottom: 1.4rem;
+                      left: 3rem !important;
+                    }
+
+                    &.left-3 {
+                      left: 16rem !important;
+                    }
+
+                    &.left-4 {
+                      left: 4rem !important;
+                    }
+
+                    &.left-5 {
+                      left: 15rem !important;
+                    }
+                  }
+
+                  //! @media 375px
+                  @include respond(mobileM) {
+                    display: none;
+                  }
+
+                  .mask {
+                    background: $haver-black-project;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                  }
+
+                  img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    right: 0;
+                  }
+                }
+
+                .floating-image {
+                  pointer-events: none;
+                  width: 24rem;
+                  position: absolute;
+                  z-index: 99;
+                  overflow: hidden;
+
+                  // opacity: 0;
+                  //! @media 1024px
+                  @include respond(desktopS) {
+                    width: 18rem;
+                  }
+
+                  //! @media 768px
+                  @include respond(tablet) {
+                    width: 14rem;
+                  }
+
+                  //! @media 550px
+                  @include respond(tabletM) {
+                    display: none;
+                  }
+                }
+              }
+
+              .line {
+                height: 2px;
+                width: 100%;
+                background: $background-project;
+                margin-bottom: 0.8rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                &.flex-0 {
+                  flex: 0;
+
+                  &::after {
+                    display: none;
+                  }
+                }
+
+                &.flex-1 {
+                  flex: 1;
+                }
+
+                &.flex-2 {
+                  flex: 2;
+                }
+
+                &.flex-3 {
+                  flex: 3;
+                }
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  height: 6px;
+                  width: 6px;
+                  border-radius: 100%;
+                  background: $background-project;
+                }
+
+                &left {
+                  &::after {
+                    right: 0;
+                  }
+                }
+
+                .mask {
+                  background: $haver-black-project;
+                  width: 100%;
+                  height: 6px;
+                  z-index: 9;
+                  position: absolute;
+
+                  &.right {
+                    right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cursor {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: #e7dede;
+  border-radius: 100%;
+  pointer-events: none;
+}
