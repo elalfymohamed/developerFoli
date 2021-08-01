@@ -1,0 +1,106 @@
+.footer-div {
+  text-align: center;
+  height: 128px;
+  will-change: transform;
+  transform: translate3d(0px, 75px, 0px);
+
+  //! @media 1382px
+  @include respond(desktop) {
+    height: 123px;
+    transform: translate3d(0px, 90px, 0px);
+  }
+
+  //! @media 1024px
+  @include respond(desktopS) {
+    height: 107px;
+    transform: translate3d(0px, 105px, 0px);
+  }
+
+  //! @media 550px
+  @include respond(tabletM) {
+    height: 98px;
+    transform: translate3d(0px, 115px, 0px);
+  }
+
+  //! @media 320px
+  @include respond(mobileS) {
+    height: 86px;
+    transform: translate3d(0px, 135px, 0px);
+  }
+
+  .footer-flex-div {
+    display: flex;
+    justify-content: center;
+
+    .root {
+      video {
+
+        //! @media 1024px
+        @include respond(desktopS) {
+          width: 4rem !important;
+        }
+
+        //! @media 550px
+        @include respond(tabletM) {
+          width: 3rem !important;
+        }
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #fff;
+      mix-blend-mode: difference;
+      margin-bottom: 0;
+
+      //! @media 1382px
+      @include respond(desktop) {
+        // color: rgb(235, 235, 235);
+      }
+
+      //! @media 1024px
+      @include respond(desktopS) {
+        // font-size: 1px;
+      }
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: 13px;
+        color: rgb(0, 0, 0);
+      }
+
+      //! @media 320px
+      @include respond(mobileS) {
+        font-size: 11px;
+      }
+    }
+
+    div {
+      transform: translateY(-0.5691px);
+    }
+  }
+
+  .footer-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    top: 49px;
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    //! @media 550px
+    @include respond(tabletM) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    //! @media 320px
+    @include respond(mobileS) {
+      top: 35px;
+    }
+  }
+}

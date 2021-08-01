@@ -1,0 +1,65 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] {
+  background-color: #16141a;
+  // background: linear-gradient(to right, #3a6186, #89253e);
+  color: #f6f6f6;
+}
+html[data-theme="light"] {
+  background-color: $back-body-light;
+  color: #16141a;
+}
+
+html {
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  @include zero;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  direction: ltr;
+}
+
+::selection {
+  background: #12131d;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  @include zero;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  // font-family: ;
+}
+
+.light_mode {
+  color: #16141a !important;
+}
+
+.dark_mode {
+  color: #f6f6f6 !important;
+}

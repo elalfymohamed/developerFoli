@@ -1,0 +1,257 @@
+.page-contact {
+  &.contact {
+    //! @media 1024px
+    @include respond(desktopS) {
+      width: 99vw;
+    }
+
+    //! @media 480px
+    @include respond(mobileL) {
+      width: 100vw;
+    }
+  }
+
+  .main-content-section {
+    //! @media 375px
+    @include respond(mobileM) {
+      margin-bottom: 10rem;
+    }
+
+    //! @media 480px
+    @include respond(mobileL) {
+      grid-gap: 0;
+    }
+
+    .image-contact {
+      //! @media 768px
+      @include respond(tablet) {
+        grid-column: 1 / span 12;
+      }
+    }
+
+    .section-title {
+      //! @media 768px
+      @include respond(tablet) {
+        grid-row: 2;
+        grid-column: 1 / span 12;
+        text-align: center;
+        position: relative;
+        bottom: 55px;
+        left: 0;
+        right: 0;
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        position: relative;
+        bottom: 30px;
+      }
+
+      h2 {
+        //! @media 1440px
+        @include respond(desktopMax) {
+          font-size: 6rem;
+        }
+
+        // //! @media 1382px
+        // @include respond(desktop) {
+        //   font-size: 4rem;
+        // }
+        //! @media 1024px
+        @include respond(desktopS) {
+          font-size: 4rem;
+        }
+
+        //! @media 375px
+        @include respond(mobileM) {
+          font-size: 3.5rem;
+        }
+
+        //! @media 320px
+        @include respond(mobileS) {
+          font-size: 3rem;
+        }
+      }
+
+      .underline {
+        //! @media 1440px
+        @include respond(desktopMax) {
+          width: 29.3rem;
+          top: 6.8rem;
+        }
+
+        // ! @media 1382px
+        @include respond(desktop) {
+          top: 6.6rem;
+        }
+
+        //! @media 1024px
+        @include respond(desktopS) {
+          width: 20rem;
+          top: 5.4rem;
+          height: 1.6rem;
+        }
+
+        //! @media 992px
+        @include respond(medium) {
+          width: 19.8rem;
+          top: 5rem;
+          // height: 1.5rem;
+        }
+
+        //! @media 768px
+        @include respond(tablet) {
+          top: 0.4rem;
+        }
+
+        //! @media 375px
+        @include respond(mobileM) {
+          width: 17.5rem;
+          top: 0.1rem;
+        }
+
+        //! @media 320px
+        @include respond(mobileS) {
+          width: 15.1rem;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .form-section {
+    //! @media 1024px
+    @include respond(desktopS) {
+      grid-gap: 1rem;
+    }
+
+    .form-contact {
+      //! @media 1024px
+      @include respond(desktopS) {
+        max-width: 30rem;
+      }
+
+      //! @media 768px
+      @include respond(tablet) {
+        grid-column: 1 / span 12;
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      h3 {
+        //! @media 1024px
+        @include respond(desktopS) {
+          margin-top: 0;
+        }
+
+        //! @media 320px
+        @include respond(mobileS) {
+          font-size: 1.9rem;
+        }
+      }
+
+      .from-group {
+        .form-control {
+          //! @media 480px
+          @include respond(mobileL) {
+            font-size: 1rem;
+          }
+        }
+
+        input {
+          //! @media 320px
+          @include respond(mobileS) {
+            &[type="text"] {
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .errorMsg {
+          //! @media 480px
+          @include respond(mobileL) {
+            font-size: 0.6rem;
+          }
+        }
+      }
+
+      button {
+        //! @media 320px
+        @include respond(mobileS) {
+          font-size: 14px;
+          padding: 15px 19px;
+        }
+
+        &:before {
+          //! @media 320px
+          @include respond(mobileS) {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+
+    .contact-us-div {
+      //! @media 768px
+      @include respond(tablet) {
+        grid-column: 1 / span 12;
+        grid-row: 2;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+      }
+
+      img {
+        //! @media 1440px
+        @include respond(desktopMax) {
+          left: 2rem;
+        }
+
+        //! @media 1382px
+        @include respond(desktop) {
+          left: 1rem;
+        }
+
+        //! @media 1024px
+        @include respond(desktopS) {
+          width: 26rem;
+          left: 4rem;
+        }
+
+        //! @media 768px
+        @include respond(tablet) {
+          width: 28rem;
+          top: 38rem;
+          left: 3rem;
+        }
+
+        //! @media 550px
+        @include respond(tabletM) {
+          top: 38rem;
+          left: 3rem;
+        }
+
+        //! @media 480px
+        @include respond(mobileL) {
+          width: 22rem;
+          left: 2rem;
+        }
+
+        //! @media 375px
+        @include respond(mobileM) {
+          width: 19rem;
+
+          left: 2rem;
+        }
+
+        //! @media 320px
+        @include respond(mobileS) {
+          width: 14rem;
+
+          left: 2rem;
+        }
+      }
+    }
+  }
+}

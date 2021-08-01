@@ -1,0 +1,94 @@
+//  Contact.scss
+
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+  }
+}
+
+// Product.scss
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+// hero.module.scss
+
+@keyframes example {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+
+  20% {
+    transform: rotate(12deg);
+  }
+
+  30% {
+    transform: rotate(-10deg);
+  }
+
+  40% {
+    transform: rotate(9deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+//
+
+@keyframes scale-right {
+  0% {
+    transform: scaleX(1);
+    transform-origin: 100% 100%;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+  }
+}
+
+// @keyframes clos-right {
+//   0% {
+//     transform: scaleX(1);
+//     transform-origin: 100% 100%;
+//   }
+//   100% {
+//     transform: scaleX(0);
+//     transform-origin: 100% 100%;
+//   }
+// }

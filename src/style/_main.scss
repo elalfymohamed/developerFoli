@@ -1,0 +1,22 @@
+@import "./normalize/normalize.scss";
+
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+@import "./base/font";
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/footer";
+
+@import "./pages/Navbar";
+@import "./pages/About";
+@import "./pages/Contact";
+@import "./media/mediaContact";
+@import "./pages/PageProject";
+@import "./pages/Product";
+@import "./pages/Skills";
+@import "./pages/NotFound";
+@import "./pages/Repo";
+
+@import "./module/Hero.module.scss";

@@ -1,0 +1,80 @@
+/* ============
+  @Mixin
+============= */
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center {
+  width: 95vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+/* =========
+  Media
+============ */
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint==desktopPc) {
+    @media screen and (min-width: $mq-desktop-pc) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktopMax) {
+    @media screen and (max-width: $mq-desktop-L) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktop) {
+    @media screen and (max-width: $mq-desktop-M) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==desktopS) {
+    @media screen and (max-width: $mq-desktop-S) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==medium) {
+    @media screen and (max-width: $mq-tablet) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==tablet) {
+    @media screen and (max-width: $mq-tablet-portrait) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==tabletM) {
+    @media screen and (max-width: $mq-mobile-landscapeM) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileL) {
+    @media screen and (max-width: $mq-mobile-landscape) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileM) {
+    @media screen and (max-width: $mq-mobile-portraitM) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==mobileS) {
+    @media screen and (max-width: $mq-mobile-portrait) {
+      @content;
+    }
+  }
+}

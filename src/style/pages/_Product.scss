@@ -1,0 +1,173 @@
+.banner {
+  max-width: 1320px;
+  margin: auto;
+  height: 100vh;
+
+  .container__ {
+    padding-bottom: 40px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+
+    //! @media 550px
+    @include respond(tabletM) {
+      padding-top: 20px;
+    }
+
+    //! @media 480px
+    @include respond(mobileL) {
+      padding-top: 40px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0;
+
+      //! @media 768px
+      @include respond(tablet) {
+        font-size: 2em;
+      }
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: 1.3em;
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        font-size: 1em;
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  .project-tools {
+    ul {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 1rem;
+
+        //! @media 480px
+        @include respond(mobileL) {
+          margin: 0.5rem;
+        }
+
+        img {
+          width: 3rem;
+
+          //! @media 550px
+          @include respond(tabletM) {
+            width: 2.5rem;
+          }
+
+          //! @media 480px
+          @include respond(mobileL) {
+            width: 2rem;
+          }
+
+          //! @media 375px
+          @include respond(mobileM) {
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .project-link {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    svg {
+      margin-right: 2rem;
+      color: #000000;
+
+      //! @media 375px
+      @include respond(mobileM) {
+        width: 1.4rem;
+        margin-right: 1.2rem;
+      }
+    }
+  }
+
+  .banner-back {
+    display: flex;
+    position: absolute;
+    left: 7%;
+    top: 12%;
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      left: 3%;
+      top: 6%;
+    }
+
+    .previous {
+      animation: rotate 40s linear infinite;
+
+      //! @media 768px
+      @include respond(tablet) {
+        width: 5rem;
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        width: 4rem;
+      }
+    }
+
+    .back_ {
+      position: absolute;
+      display: flex;
+      right: 41px;
+      top: 54px;
+
+      .back__ {
+        width: 3rem;
+
+        &:hover {
+          margin-right: 5px;
+        }
+
+        //! @media 768px
+        @include respond(tablet) {
+          width: 2rem;
+        }
+
+        //! @media 480px
+        @include respond(mobileL) {
+          width: 1.7rem;
+        }
+      }
+
+      //! @media 768px
+      @include respond(tablet) {
+        right: 24px;
+        top: 32px;
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        right: 18px;
+        top: 25px;
+      }
+    }
+  }
+
+  .image {
+
+    //! @media 1024px
+    @include respond(desktopS) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+}
