@@ -1,74 +1,65 @@
+
+
 module.exports = {
   siteMetadata: {
-    title: `Resume | Resume of Elalfy Mohamed`,
+    title: `Resume `,
     description: `I am a Front-End developer with one year of experience working as a JavaScript and React, Gatsby.`,
-    author: `@___ALFY`,
+    author: ``,
   },
   plugins: [
     {
-      resolve: "gatsby-source-github",
+      resolve: "gatsby-source-graphql",
       options: {
+        typeName: "GitHub",
+        fieldName: "github",
+        url: "https://api.github.com/graphql",
         headers: {
-          Authorization: `Bearer `,
+          Authorization: `Bearer  ${} ` //KEY_API_GITHUB,
         },
-        queries: [
-          `{
-          viewer {
-            pinnedItems(first: 6, types: REPOSITORY) {
-              nodes {
-                ... on Repository {
-                  name
-                  url
-                  description
-                  stargazerCount
-                  forkCount
-                  primaryLanguage {
-                    color
-                    name
-                  }
-                  languages {
-                    totalSize
-                  }
-                }
-              }
-            }
-          }
-        }`,
-        ],
+        fetchOptions: {},
       },
     },
-
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets/`,
+        trackingId: "",
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `Resume | Resume of Elalfy Mohamed`,
+        name: `Resume `,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `https://resume-of-elalfy.netlify.app/`,
         background_color: `#f6f6f6`,
         theme_color: `#12131d`,
         display: `minimal-ui`,
-        icon: `favicon.svg`,
+        icon: `./src/assets/icon/favicon.svg`,
       },
     },
-
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        cssLoaderOptions: {
-          camelCase: false,
-        },
+        name: "assets",
+        path: "./src/assets/",
       },
+      __key: "assets",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: "./src/assets/pdf",
+      },
+      __key: "assets",
     },
     {
       resolve: `gatsby-plugin-styled-components`,
