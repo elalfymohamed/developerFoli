@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react"
 // Gatsby link
 import { Link } from "gatsby"
+
 // Gatsby image
-import { Image } from "../gatsby-images/image"
+import { ShortImages } from "../projectsImages/ShortImages"
 // Framer Motion
 import { motion, AnimatePresence } from "framer-motion"
 // Data
@@ -153,7 +154,7 @@ const List = ({
             }}
             className="floating-image"
           >
-            <Image src={src} />
+            <ShortImages src={src} />
           </motion.div>
           <div className={`line right flex-${rightLineFlex}`}>
             <motion.div

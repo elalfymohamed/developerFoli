@@ -1,0 +1,122 @@
+[
+  {
+    "number": 1,
+    "title": "amazon",
+    "id": "amazon",
+    "ulr": " https://amazon-ruby.vercel.app/",
+    "github": "https://github.com/elalfymohamed/amazon",
+    "src": 1,
+    "icon": 1,
+    "column": "2/2"
+  },
+  {
+    "number": 2,
+    "title": "CART",
+    "id": "CART",
+    "ulr": "https://vigorous-rosalind-302452.netlify.app/",
+    "github": "https://github.com/elalfymohamed/redux-cart ",
+    "src": 2,
+    "icon": 2,
+    "column": "1/2"
+  },
+  {
+    "number": 3,
+    "title": "hulu-nextJs",
+    "id": "hulu-nextJs",
+    "ulr": "https://hulu-next-js-three.vercel.app/",
+    "github": "https://github.com/elalfymohamed/hulu-Next.js",
+    "src": 3,
+    "icon": 3,
+    "column": "2/2"
+  },
+  {
+    "number": 4,
+    "title": "Movies-App",
+    "id": "Movies-App",
+    "ulr": "https://serene-jepsen-26024d.netlify.app/",
+    "github": "https://github.com/elalfymohamed/Movies-App",
+    "src": 4,
+    "icon": 4,
+    "column": "1/2"
+  },
+  {
+    "number": 5,
+    "title": "MovieWatchList",
+    "id": "MovieWatchList",
+    "ulr": "",
+    "github": "https://github.com/elalfymohamed/MovieWatchlist",
+    "src": 5,
+    "icon": 5,
+    "column": "2/2"
+  },
+  {
+    "number": 6,
+    "title": "Gams Store",
+    "id": "Gams-Store",
+    "ulr": "https://github.com/elalfymohamed/Games-Store",
+    "github": "https://github.com/elalfymohamed/Games-Store",
+    "src": 6,
+    "icon": 6,
+    "column": "1/2"
+  },
+  {
+    "number": 7,
+    "title": "React-Shopping",
+    "id": "React-Shopping",
+    "ulr": "https://unruffled-shockley-f9d68c.netlify.app/",
+    "github": "https://github.com/elalfymohamed/React-Shopping",
+    "src": 7,
+    "icon": 7,
+    "column": "2/2"
+  },
+  {
+    "number": 8,
+    "title": "Redux API",
+    "id": "Redux-API",
+    "ulr": "https://amazing-shirley-3e043e.netlify.app/",
+    "github": "https://github.com/elalfymohamed/Redux-API",
+    "src": 8,
+    "icon": 8,
+    "column": "1/2"
+  },
+  {
+    "number": 9,
+    "title": "IC Repair Design",
+    "id": "IC-Repair-Design",
+    "ulr": "https://repairdesignic.netlify.app/",
+    "github": "https://github.com/elalfymohamed/React-Hooks-Project",
+    "src": 9,
+    "icon": 9,
+    "column": "2/2"
+  },
+  {
+    "number": 10,
+    "title": "TODO-LIST",
+    "id": "TODO-LIST",
+    "ulr": "https://cranky-davinci-8315b7.netlify.app/",
+    "github": " https://github.com/elalfymohamed/TODO-LIST ",
+    "src": 10,
+    "icon": 10,
+    "column": "1/2"
+  },
+  {
+    "number": 11,
+    "title": "Profile",
+    "id": "Profile",
+    "ulr": "https://agitated-poincare-4f04aa.netlify.app/",
+    "github": "https://github.com/elalfymohamed/Profile-Project",
+    "src": 11,
+    "icon": 11,
+    "column": "2/2"
+  },
+  {
+    "number": 12,
+    "title": "Discing",
+    "id": "Discing",
+    "ulr": "https://relaxed-hermann-630bf0.netlify.app/",
+    "github": "https://github.com/elalfymohamed/Project",
+    "src": 12,
+    "icon": 12,
+    "column": "1/2"
+  }
+]

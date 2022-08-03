@@ -1,8 +1,10 @@
 import React from "react"
+import styled from "@emotion/styled"
+
 import SvgOne from "./SvgOne"
 import SvgTow from "./SvgTow"
 import SvgThere from "./SvgThere"
-import styled from "styled-components"
+
 import { Device } from "../Device"
 
 const Div = styled.div`
@@ -16,14 +18,14 @@ const Div = styled.div`
     /* transform: translate3d(0px, 1206.4px, 0px) !important; */
   }
   @media ${Device.laptopM} {
-    height:690px !important;
+    height: 690px !important;
   }
   @media ${Device.laptop} {
     transform: translate3d(0px, 648.4px, 0px) !important;
-    height:662px !important;
+    height: 662px !important;
   }
   @media ${Device.tablet} {
-    height:1000px !important;
+    height: 1000px !important;
     /* transform: translate3d(0px, 1818.2px, 0px) !important; */
   }
 `

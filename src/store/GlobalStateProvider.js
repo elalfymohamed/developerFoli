@@ -1,11 +1,19 @@
-import React from "react"
+import React, { createContext } from "react"
+import PropTypes from "prop-types"
 import useGlobalState from "./useGlobalState"
-import Context from "./context"
+
+export const GlobalContext = createContext()
 
 const GlobalStateProvider = ({ children }) => {
   return (
-    <Context.Provider value={useGlobalState()}>{children}</Context.Provider>
+    <GlobalContext.Provider value={useGlobalState()}>
+      {children}
+    </GlobalContext.Provider>
   )
+}
+
+GlobalStateProvider.propTypes = {
+  children: PropTypes.object,
 }
 
 export default GlobalStateProvider

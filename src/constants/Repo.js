@@ -2,45 +2,12 @@ import React, { useContext } from "react"
 // Gatsby
 import { useStaticQuery, graphql } from "gatsby"
 
-import Context from "../store/context"
+import { GlobalContext } from "../store/GlobalStateProvider"
 
 const Repo = () => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
 
-  const query = graphql`
-    {
-      github {
-        viewer {
-          pinnableItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on GitHub_Repository {
-                id
-                name
-                url
-                description
-                stargazerCount
-                forkCount
-                primaryLanguage {
-                  color
-                  name
-                }
-                languages {
-                  totalSize
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `
-
-  /**
-   * @param  {} url
-   * @param  {} "_blank"
-   * @param  {} win.focus(
-   */
   const openRepoInNewTab = url => {
     let win = window.open(url, "_blank")
     win.focus()
@@ -162,3 +129,31 @@ const Repo = () => {
 }
 
 export default Repo
+
+export const query = graphql`
+  {
+    github {
+      viewer {
+        pinnableItems(first: 6, types: REPOSITORY) {
+          nodes {
+            ... on GitHub_Repository {
+              id
+              name
+              url
+              description
+              stargazerCount
+              forkCount
+              primaryLanguage {
+                color
+                name
+              }
+              languages {
+                totalSize
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

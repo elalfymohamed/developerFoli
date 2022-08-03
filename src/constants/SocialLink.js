@@ -6,11 +6,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import { MdEmail } from "react-icons/md"
 import { FaFileDownload } from "react-icons/fa"
-import Context from "../store/context"
+import { GlobalContext } from "../store/GlobalStateProvider"
 
 const SocialLink = ({ styleClass }) => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
   //
   const data = [
     {
@@ -78,7 +78,7 @@ const SocialLink = ({ styleClass }) => {
       {file.allFile.edges.map((file, index) => (
         <li key={index}>
           <a
-            href={file.node.relativePath}
+            href={file.node.publicURL}
             className="social-link"
             download
             title="Download CV"
@@ -95,7 +95,7 @@ const SocialLink = ({ styleClass }) => {
 }
 
 SocialLink.prototype = {
-  styleClass: PropTypes.string,
+  styleClass: PropTypes.string.isRequired,
 }
 
 export default SocialLink

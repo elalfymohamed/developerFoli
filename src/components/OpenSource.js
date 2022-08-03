@@ -1,6 +1,6 @@
 import React from "react"
 //Components
-import { Repo } from "../constants"
+import Repo from "../constants/Repo"
 import Title from "../components/Title"
 import Total from "../svg/Projects/TotalProjects"
 

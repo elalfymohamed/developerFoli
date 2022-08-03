@@ -1,26 +1,17 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 
-import styled, { css } from "styled-components"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
-import Context from "../store/context"
-import { useLocalState } from "../hooks/useLocalState"
+import { GlobalContext } from "../store/GlobalStateProvider"
 
 import moon from "../assets/darkMode/moon.gif"
 import sun from "../assets/darkMode/sun.gif"
 
 const ThemeToggler = () => {
-  const { state, dispatch } = useContext(Context)
+  // context state
+  const { state, clickLightMode, clickDarkMode } = useContext(GlobalContext)
 
-  const [darkMode, setDarkMode] = useLocalState(false, "dark")
-  const [lightMode, setLightMode] = useLocalState(true, "light")
-
-  useEffect(() => {
-    if (!state.isDark) {
-      document.documentElement.setAttribute("data-theme", "light")
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark")
-    }
-  })
   const trans = () => {
     document.documentElement.classList.add("transition")
     window.setTimeout(() => {
@@ -30,30 +21,42 @@ const ThemeToggler = () => {
 
   return (
     <ModeDark>
-      <LightMode lightMode={lightMode} title="lightMode">
+      <LightMode
+        lightMode={state.isDark ? false : true}
+        title="lightMode"
+        data-theme="light-theme"
+        data-theme-light={state.isDark ? false : true}
+        data-theme-mode="light"
+      >
         <BtnMode
           type="button"
-          data-toggle="lightMode"
-          onClick={() =>
-            setDarkMode(!darkMode) ||
-            setLightMode(!lightMode) ||
-            dispatch({ type: "TOGGLE_DARK_MODE" }) ||
+          data-toggle="light-theme"
+          role="button"
+          data-theme-mode="light"
+          onClick={() => {
+            clickLightMode()
             trans()
-          }
+          }}
         >
           <img src={sun} alt="lightMode" width="33" height="33" />
         </BtnMode>
       </LightMode>
-      <DarkMode darkMode={darkMode} title="darkMode">
+      <DarkMode
+        darkMode={state.isDark ? true : false}
+        title="darkMode"
+        data-theme="dark-theme"
+        data-theme-dark={state.isDark ? true : false}
+        data-theme-mode="dark"
+      >
         <BtnMode
           type="button"
-          data-toggle="darkMode"
-          onClick={() =>
-            setLightMode(!lightMode) ||
-            setDarkMode(!darkMode) ||
-            dispatch({ type: "TOGGLE_DARK_MODE" }) ||
+          data-toggle="dark-theme"
+          role="button"
+          data-theme-mode="dark"
+          onClick={() => {
+            clickDarkMode()
             trans()
-          }
+          }}
         >
           <img src={moon} alt="darkMode" width="35" height="35" />
         </BtnMode>

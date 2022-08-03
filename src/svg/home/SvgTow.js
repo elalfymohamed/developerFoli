@@ -1,5 +1,9 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
+
 import { Device } from "../Device"
 
 const rotate = keyframes`
@@ -65,7 +69,7 @@ const G6b = styled.svg`
   width: 4rem;
   left: 30%;
   top: 65%;
-   @media ${Device.mobileL} {
+  @media ${Device.mobileL} {
     display: none;
   }
 `

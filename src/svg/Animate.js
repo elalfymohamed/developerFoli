@@ -1,5 +1,9 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
+
 import { Device } from "./Device"
 
 const g94xf = keyframes`
@@ -34,13 +38,13 @@ const Div = styled.div`
     transform: translate3d(0px, 2903px, 0px);
   }
   @media ${Device.tabletM} {
-  transform: translate3d(0px, 2870px, 0px);
+    transform: translate3d(0px, 2870px, 0px);
   }
   @media ${Device.tablet} {
     transform: translate3d(0px, 4232px, 0px);
     height: 246px;
   }
-    @media ${Device.tabletS} {
+  @media ${Device.tabletS} {
     height: 169px;
     transform: translate3d(0px, 4117px, 0px);
   }
@@ -75,19 +79,18 @@ const Cow = styled.svg`
   path {
     animation: 20s linear 0s infinite alternate none running ${g94xf};
   }
-   @media ${Device.laptop} {
-    height:33vh;
-  } 
+  @media ${Device.laptop} {
+    height: 33vh;
+  }
   @media ${Device.tabletM} {
-  height:30vh;
+    height: 30vh;
   }
   @media ${Device.tablet} {
-  height: 19vh;
+    height: 19vh;
   }
-   @media ${Device.mobileL} {
-    height:16vh;
+  @media ${Device.mobileL} {
+    height: 16vh;
   }
-  
 `
 
 const Animate = () => {

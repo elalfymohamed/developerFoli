@@ -1,18 +1,19 @@
 import React, { useEffect } from "react"
 // Effect Gsap
-import { TweenMax, Expo, TimelineMax, Bounce } from "gsap"
+import { gsap, Expo, Bounce } from "gsap"
 //Components
-import { Seo, Title, Navbar } from "../components"
+import Seo from "../components/Seo"
+import Navbar from "../components/Navbar"
+import Title from "../components/Title"
 import Footer from "../components/project/Footer"
-
 //  Image
 import Img from "../assets/About us page-cuate.svg"
 
 const About = () => {
-  const tl = new TimelineMax()
+  const tl = gsap.timeline()
 
   const slideLeft = (cla, sX, m = 0.1) => {
-    TweenMax.from(
+    gsap.from(
       cla,
       1.5,
       {
@@ -32,8 +33,9 @@ const About = () => {
     //
     tl.from(
       ".about-text .about-stack",
-      1,
+
       {
+        duration: 1.5,
         y: -30,
         opacity: 0,
         ease: Bounce.easeOut,
@@ -43,14 +45,15 @@ const About = () => {
 
     tl.fromTo(
       ".about-text p",
-      2,
+
       {
+        duration: 2,
         opacity: "0",
       },
       { opacity: "1" },
       2
     )
-  })
+  }, [])
 
   return (
     <>
@@ -65,16 +68,16 @@ const About = () => {
             <Title title="About me" />
             <div className="about-text">
               <p>
-                Hi there, I&rsquo;m a Front-End Developer with one year of
-                experience working as a JavaScript and (React, GatsbyJs,
+                Hi there, I&rsquo;m a Front-End Developer with two years of
+                experience working as a JavaScript and (Vue, React, GatsbyJs,
                 NextJs), I have been building lots of static and dynamic
                 websites with a responsive design and high compatibility with
                 all browsers using modern and standard techniques
               </p>
               <div className="about-stack" style={{ color: "#16141a" }}>
-                <span>Gatsby</span>
-                <span>React</span>
                 <span>JavaScript</span>
+                <span>React</span>
+                <span>Gatsby</span>
                 <span>Sass</span>
                 <span>Webpack</span>
               </div>

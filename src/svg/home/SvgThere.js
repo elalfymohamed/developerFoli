@@ -1,5 +1,7 @@
 import React from "react"
-import styled from "styled-components"
+
+import styled from "@emotion/styled"
+
 import { Device } from "../Device"
 
 const Isw = styled.svg`
@@ -130,7 +132,7 @@ const Liq = styled.svg`
   top: 30%;
 
   @media ${Device.laptop} {
-    display:none;
+    display: none;
   }
 `
 const E5p = styled.svg`

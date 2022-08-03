@@ -1,29 +1,37 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 // Gatsby
 import { Link } from "gatsby"
+// PropTypes
+import PropTypes from "prop-types"
 // Icon
 import { AiFillGithub } from "react-icons/ai"
 import { FaShare } from "react-icons/fa"
 // Effect Gsap
-import { TweenMax, Expo, TimelineMax } from "gsap"
+import { gsap, Expo } from "gsap"
 //Components
-import { Seo } from "../components"
+import Seo from "../components/Seo"
 
-import { ImagesProject } from "../components/gatsby-images/ImagesProject"
-import { Icons2 } from "../components/gatsby-images/Icons2"
-import { ScrollTop } from "../constants"
+import { ImagesProject } from "../components/projectsImages/ImagesProject"
+import { SkillsIcon } from "../components/projectsImages/SkillsIcon"
+import ScrollTop from "../constants/ScrollTop"
+import { GlobalContext } from "../store/GlobalStateProvider"
 
 import back from "../assets/icon/back.svg"
 import previous from "../assets/icon/previous.svg"
+// Theme
+import back_dark from "../assets/icon/back_dark.svg"
+import previous_dark from "../assets/icon/previous_dark.svg"
 
 const Product = ({ pageContext }) => {
+  const { state } = useContext(GlobalContext)
+
   const product = pageContext
 
   const slideX = 100
-  const tl = new TimelineMax()
+  const tl = gsap.timeline()
 
   const slideLeft = (cla, sX) => {
-    TweenMax.from(
+    gsap.from(
       cla,
       1.5,
       {
@@ -39,8 +47,8 @@ const Product = ({ pageContext }) => {
   const showItem = (nCla, time) => {
     tl.fromTo(
       nCla,
-      1,
       {
+        duration: 1,
         opacity: "0",
       },
       { opacity: "1" },
@@ -49,13 +57,26 @@ const Product = ({ pageContext }) => {
   }
 
   useEffect(() => {
+    if (!state.isDark) {
+      document.documentElement.setAttribute("data-theme", "light")
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark")
+    }
+    //
     slideLeft(".title .main-headline", -slideX)
     slideLeft(".project-tools ul li", -slideX)
     slideLeft(".back_ .back__", slideX)
     //
     showItem(".banner-back .previous", 1.7)
     showItem(".project-link", 2)
-    tl.from(".image img", 1, { y: "800" }, 1)
+    tl.from(
+      ".image img",
+      {
+        duration: 1,
+        y: "800",
+      },
+      1
+    )
   })
 
   return (
@@ -68,23 +89,35 @@ const Product = ({ pageContext }) => {
         <div className="inner-banner">
           <div className="container__ fluid">
             <div className="banner-back">
-              <img src={previous} alt="previous" className="previous" />
+              {!state.isDark ? (
+                <img src={previous} alt="previous" className="previous" />
+              ) : (
+                <img src={previous_dark} alt="previous" className="previous" />
+              )}
               <Link to="/Projects/" className="back_">
-                <img src={back} alt="back" className="back__" />
+                {!state.isDark ? (
+                  <img src={back} alt="back" className="back__" />
+                ) : (
+                  <img src={back_dark} alt="back" className="back__" />
+                )}
               </Link>
             </div>
             <div className="title">
               <h1 className="main-headline">{product.title}</h1>
             </div>
             <div className="project-tools">
-              <Icons2 icon={product.icon} />
+              <SkillsIcon icon={product.icon} />
             </div>
             <div className="project-link">
               <a href={product.ulr} target="_blank" rel="noreferrer">
-                <FaShare />
+                <FaShare
+                  style={{ color: !state.isDark ? "#16141a" : "#f6f6f6" }}
+                />
               </a>
               <a href={product.github} target="_blank" rel="noreferrer">
-                <AiFillGithub />
+                <AiFillGithub
+                  style={{ color: !state.isDark ? "#16141a" : "#f6f6f6" }}
+                />
               </a>
             </div>
             <div className="image">
@@ -96,6 +129,10 @@ const Product = ({ pageContext }) => {
       </div>
     </>
   )
+}
+
+Product.propTypes = {
+  pageContext: PropTypes.object,
 }
 
 export default Product

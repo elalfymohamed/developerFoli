@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react"
 //  React icons
 import { FaArrowCircleUp } from "react-icons/fa"
 // styled
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
 
 const fadIn = keyframes`
 0% {
@@ -32,9 +35,9 @@ const ScrollTop = () => {
   const [showScroll, setShowScroll] = useState(false)
 
   const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 400) {
+    if (!showScroll && window.pageYOffset > 425) {
       setShowScroll(true)
-    } else if (showScroll && window.pageYOffset <= 400) {
+    } else if (showScroll && window.pageYOffset <= 425) {
       setShowScroll(false)
     }
   }

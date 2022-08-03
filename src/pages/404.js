@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { gsap } from "gsap"
-import { Seo } from "../components"
-import { AstronautIcon } from "../constants"
+import Seo from "../components/Seo"
+import AstronautIcon from "../constants/AstronautIcon"
 
 const NotFoundPage = () => {
   const [counter, setCounter] = useState(4)
@@ -90,7 +90,7 @@ const NotFoundPage = () => {
       delay: 2,
     })
     //
-  })
+  }, [])
   useEffect(() => {
     const item = counter > 0 && setTimeout(() => setCounter(counter - 1), 1000)
     return () => clearTimeout(item)
@@ -101,7 +101,7 @@ const NotFoundPage = () => {
       <Helmet>
         <meta
           httpEquiv="refresh"
-          content=" 4, url= https://resume-of-elalfy.netlify.app"
+          content=" 4, url= https://elalfymohamed.netlify.app"
         />
       </Helmet>
       <main className="container">

@@ -1,5 +1,7 @@
 import React from "react"
-import styled from "styled-components"
+
+import styled from "@emotion/styled"
+
 import { Device } from "../Device"
 
 const f = [
@@ -23,10 +25,10 @@ const Lmp = styled.svg`
   left: 70%;
   top: 60%;
   @media ${Device.tabletS} {
-  top:90%;
+    top: 90%;
   }
   @media ${Device.mobileL} {
-  display:none;
+    display: none;
   }
 `
 const Qgg = styled.svg`
@@ -53,7 +55,6 @@ const Lkm = styled.svg`
 `
 //
 
-
 const E3F3CV = styled.svg`
   ${f}
   color:#ff9900;
@@ -69,7 +70,7 @@ const DED3G4 = styled.svg`
   left: 17%;
   top: 109%;
   @media ${Device.mobileL} {
-  display:none;
+    display: none;
   }
 `
 

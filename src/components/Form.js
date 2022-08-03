@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useContext } from "react"
-// AXIOS
-import axios from "axios"
+// EmailJs
+import emailjs from "emailjs-com"
 // FROMIK
 import { Formik, Field, Form } from "formik"
 //
-import { SocialLink } from "../constants"
-import Context from "../store/context"
+import SocialLink from "../constants/SocialLink"
+import { GlobalContext } from "../store/GlobalStateProvider"
 // image
 import imgForm from "../assets/undraw_delivery_address_03n1.svg"
 
 const FormContact = () => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
   //
   const [fieldErrors, setFieldErrors] = useState({})
   const validationRules = {
@@ -71,30 +71,35 @@ const FormContact = () => {
       })
     }
   }
-  const handleOnSubmit = event => {
-    event.preventDefault()
-    if (!validate()) {
-      return
-    }
+
+  function sendEmail(e) {
+    e.preventDefault()
+    if (!validate()) return
+
     setServerState({ submitting: true })
-    axios({
-      method: "POST",
-      url: "https://formspree.io/f/mleoobqz",
-      data: inputs,
-    })
-      .then(r => {
+    emailjs
+      .sendForm(
+        "service_q273crl",
+        "template_rv85bg7",
+        e.target,
+        "user_HhDEZK5RxEbRM6nNNMHj0"
+      )
+      .then(result => {
         handleServerResponse(true, "Thanks!")
       })
       .catch(r => {
         handleServerResponse(false, r.response.data.error)
       })
   }
+
   return (
     <section className="form-section">
       <article className="form-contact">
-        <h3>get in touch</h3>
+        <h3 style={{ color: state.isDark ? "#f6f6f6" : "#16141a" }}>
+          get in touch
+        </h3>
         <Formik>
-          <Form onSubmit={handleOnSubmit} noValidate>
+          <Form onSubmit={sendEmail} noValidate>
             <div className="from-group">
               <Field
                 name="name"

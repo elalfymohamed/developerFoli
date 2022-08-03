@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import LoaderSVG from "./assets/project.gif"
+import LoaderGif from "./assets/gif/loaderGif.gif"
 
 const HTML = props => {
   return (
@@ -12,7 +12,18 @@ const HTML = props => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+
         {props.headComponents}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -34,7 +45,7 @@ const HTML = props => {
             transition: "all 1.5s ease-out",
           }}
         >
-          <img src={LoaderSVG} alt="loading spinner" width="40%" />
+          <img src={LoaderGif} alt="loading spinner" width="40%" />
         </div>
         <div
           key={`body`}

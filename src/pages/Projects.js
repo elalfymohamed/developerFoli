@@ -1,20 +1,15 @@
-import React, { useState, useContext } from "react"
-// Framer Motion
-import { motion } from "framer-motion"
-//Components
-import useMousePosition from "../hooks/useMousePosition"
-import Proj from "../components/project/Project"
+import React, { useContext } from "react"
+
 import Footer from "../components/project/Footer"
-import { Seo, Navbar } from "../components"
-import Context from "../store/context"
+import ProjectItem from "../components/project/ProjectItem"
+import Seo from "../components/Seo"
+import Navbar from "../components/Navbar"
+import { GlobalContext } from "../store/GlobalStateProvider"
+import ScrollTop from "../constants/ScrollTop"
 
 const Projects = () => {
   // Theme
-  const { state } = useContext(Context)
-  const [menuState, setMenuState] = useState(false)
-  const [cursorHovered, seCursorHovered] = useState(false)
-
-  const { x, y } = useMousePosition()
+  const { state } = useContext(GlobalContext)
 
   return (
     <>
@@ -37,34 +32,16 @@ const Projects = () => {
                   : "title-offset title-showlight_mode"
               }
             >
-              Project
+              Projects
             </span>
           </h1>
         </div>
         <section className={`section section-project`}>
-          <motion.div
-            animate={{
-              x: x - 16,
-              y: y - 16,
-              scale: cursorHovered ? 1.3 : 1,
-              opacity: cursorHovered ? 0.8 : 0,
-            }}
-            transition={{
-              ease: "linear",
-              duration: 0.2,
-            }}
-            className="cursor"
-          ></motion.div>
-          <Proj
-            x={x}
-            y={y}
-            menuState={menuState}
-            seCursorHovered={seCursorHovered}
-            setMenuState={setMenuState}
-          />
+          <ProjectItem />
         </section>
       </main>
       <Footer setClassFooter="footer-project" />
+      <ScrollTop />
     </>
   )
 }

@@ -3,23 +3,23 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+const Seo = ({ lang, meta, title }) => {
+  const site = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          siteUrl
         }
       }
-    `
-  )
+    }
+  `)
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = site.site.siteMetadata.description
+  const defaultTitle = site.site.siteMetadata?.title
+  const siteURL = site.site.siteMetadata.siteUrl
 
   return (
     <Helmet
@@ -35,15 +35,15 @@ const Seo = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: defaultTitle,
         },
         {
           property: `og:image`,
-          content: `https://user-images.githubusercontent.com/46499967/107887327-09d34c80-6f0e-11eb-8769-f61ac6fcb75d.png`,
+          content: `https://user-images.githubusercontent.com/46499967/123859349-d2959300-d924-11eb-87c4-78b1b0a3e892.png`,
         },
         {
           property: `og:url`,
-          content: `https://resume-of-elalfy.netlify.app/`,
+          content: siteURL,
         },
         {
           property: `og:description`,
@@ -63,11 +63,11 @@ const Seo = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: site.site.siteMetadata?.author || ``,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: defaultTitle,
         },
         {
           name: `twitter:site`,
@@ -89,15 +89,12 @@ const Seo = ({ description, lang, meta, title }) => {
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
 }
 
 Seo.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  author: PropTypes.string,
 }
 
 export default Seo

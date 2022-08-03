@@ -15,7 +15,9 @@ import sass from "../assets/skills/sass.svg"
 // Webpack Svg
 import webpack from "../assets/skills/webpack.svg"
 // Gulp Svg
-import gulp from "../assets/skills/gulp.svg"
+// import gulp from "../assets/skills/gulp.svg"
+// TypeScript
+import typescript from "../assets/skills/typescript.svg"
 //  Css Svg
 import css from "../assets/skills/css.svg"
 // Bootstrap Svg
@@ -26,8 +28,30 @@ import github from "../assets/skills/github.svg"
 import redux from "../assets/skills/redux.svg"
 // ReactNative Svg
 import reactNative from "../assets/skills/react-native.svg"
+//  vue js Svg
+import vueJs from "../assets/skills/vuejs.svg"
+// Gulp Svg
+import gulp from "../assets/skills/gulp.svg"
+// Emotion Svg
+// import emotion from "../assets/skills/emotion.svg"
+// Firebase Svg
+import firebase from "../assets/skills/firebase.svg"
+// TailwindCss Svg
+import tailwindCss from "../assets/skills/TailwindCss.svg"
 
 export const imagesData = [
+  {
+    id: 3,
+    img: js,
+    name: "JavaScript",
+    color: `#f7df1e`,
+  },
+  {
+    id: 15,
+    img: typescript,
+    name: "typescript",
+    color: `#2196f3`,
+  },
   {
     id: 1,
     img: react,
@@ -35,10 +59,16 @@ export const imagesData = [
     color: `#6ab8e7`,
   },
   {
-    id: 3,
-    img: js,
-    name: "JavaScript",
-    color: `#f7df1e`,
+    id: 16,
+    img: vueJs,
+    name: "VueJs",
+    color: `#41b883`,
+  },
+  {
+    id: 2,
+    img: reactNative,
+    name: "ReactNative",
+    color: `#6ab8e7`,
   },
   {
     id: 4,
@@ -70,12 +100,7 @@ export const imagesData = [
     name: "Redux",
     color: `#663399`,
   },
-  {
-    id: 2,
-    img: reactNative,
-    name: "ReactNative",
-    color: `#6ab8e7`,
-  },
+
   {
     id: 9,
     img: sass,
@@ -100,16 +125,55 @@ export const imagesData = [
     name: "Webpack",
     color: `#1c78c0`,
   },
-  {
-    id: 13,
-    img: gulp,
-    name: "Gulp",
-    color: `#eb4a4b`,
-  },
+  // {
+  //   id: 13,
+  //   img: gulp,
+  //   name: "Gulp",
+  //   color: `#eb4a4b`,
+  // },
   {
     id: 14,
     img: bootstrap,
     name: "Bootstrap",
     color: `#563d7c`,
+  },
+]
+
+export const toleProject = [
+  {
+    icons: [nextJs, redux, tailwindCss, firebase],
+  },
+  {
+    icons: [react, redux, css],
+  },
+  {
+    icons: [nextJs, tailwindCss],
+  },
+  {
+    icons: [react, sass],
+  },
+  {
+    icons: [react, tailwindCss],
+  },
+  {
+    icons: [html, gulp, js, pug, sass],
+  },
+  {
+    icons: [react, redux, sass],
+  },
+  {
+    icons: [react, redux, sass],
+  },
+  {
+    icons: [react, webpack, sass],
+  },
+  {
+    icons: [react, css],
+  },
+  {
+    icons: [html, js, css],
+  },
+  {
+    icons: [html, sass],
   },
 ]

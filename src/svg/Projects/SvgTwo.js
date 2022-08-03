@@ -1,5 +1,9 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
+
 import { Device } from "../Device"
 
 const f = [
@@ -42,7 +46,7 @@ const H1p = styled.svg`
   width: 3rem;
   left: 95%;
   top: 50%;
-   @media ${Device.mobileL} {
+  @media ${Device.mobileL} {
     display: none;
   }
 `

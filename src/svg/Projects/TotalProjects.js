@@ -1,8 +1,11 @@
 import React from "react"
+
+import styled from "@emotion/styled"
+
 import SvgOne from "./SvgOne"
 import SvgTow from "./SvgTwo"
 import SvgThere from "./SvgThere"
-import styled from "styled-components"
+
 import { Device } from "../Device"
 
 const Div = styled.div`
@@ -10,10 +13,10 @@ const Div = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  z-index:-200;
-    @media ${Device.laptopL} {
+  z-index: -200;
+  @media ${Device.laptopL} {
     transform: translate3d(0px, 2047px, 0px) !important;
-    height:985px !important;
+    height: 985px !important;
   }
   @media ${Device.laptopM} {
     transform: translate3d(0px, 1625.2px, 0px) !important;

@@ -1,5 +1,9 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
+
 import { Device } from "../Device"
 
 const rotate = keyframes`
@@ -19,7 +23,7 @@ const Div = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-    @media ${Device.mobileL} {
+  @media ${Device.mobileL} {
     display: none;
   }
 `
@@ -57,7 +61,7 @@ const Cqs = styled.svg`
   left: 70%;
   top: 75%;
   @media ${Device.tabletS} {
-   display:none;
+    display: none;
   }
 `
 

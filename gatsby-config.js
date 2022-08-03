@@ -1,12 +1,21 @@
-
-
 module.exports = {
   siteMetadata: {
-    title: `Resume `,
-    description: `I am a Front-End developer with one year of experience working as a JavaScript and React, Gatsby.`,
-    author: ``,
+    title: `Resume | Resume of Elalfy Mohamed`,
+    description: `I am a Front-End developer with two years of experience working as a JavaScript and (ReactJs,VueJs,
+      GatsbyJs, NextJs).`,
+    author: `@___ALFY`,
+    siteUrl: `https://elalfymohamed.netlify.app`,
   },
   plugins: [
+    "gatsby-plugin-sass",
+    // "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    `gatsby-plugin-offline`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -14,37 +23,30 @@ module.exports = {
         fieldName: "github",
         url: "https://api.github.com/graphql",
         headers: {
-          Authorization: `Bearer  ${} ` //KEY_API_GITHUB,
+          Authorization: `Bearer {}`, // -> KEY GITHUB
         },
-        fetchOptions: {},
       },
     },
-    "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "G-YEE98S84BM",
+        head: true,
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `Resume `,
-        short_name: `starter`,
-        start_url: `https://resume-of-elalfy.netlify.app/`,
+        name: `Resume | Resume of Elalfy Mohamed`,
+        short_name: `portfolio.Elalfy`,
+        // start_url: `https://elalfymohamed.netlify.app/`,
         background_color: `#f6f6f6`,
         theme_color: `#12131d`,
         display: `minimal-ui`,
         icon: `./src/assets/icon/favicon.svg`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -62,13 +64,14 @@ module.exports = {
       __key: "assets",
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-plugin-emotion`,
       options: {
-        displayName: false,
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
       },
     },
-    `gatsby-plugin-offline`,
-
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

@@ -1,5 +1,7 @@
 import React from "react"
-import styled from "styled-components"
+
+import styled from "@emotion/styled"
+
 import SvgOne from "./SvgOne"
 import SvgThere from "./SvgThere"
 import SvgTow from "./SvgTow"
@@ -14,7 +16,7 @@ const Div = styled.div`
   width: 100%;
   height: 758px;
   transform: translate3d(0px, 2597px, 0px);
-  z-index:-200;
+  z-index: -200;
 
   @media ${Device.laptopL} {
     height: 846px;
@@ -27,15 +29,15 @@ const Div = styled.div`
     transform: translate3d(0px, 2264px, 0px);
   }
   @media ${Device.tabletM} {
-  height: 880px;
-  transform: translate3d(0px,2272px, 0px);
+    height: 880px;
+    transform: translate3d(0px, 2272px, 0px);
   }
   @media ${Device.tablet} {
-  height: 742px;
+    height: 742px;
     transform: translate3d(0px, 3582px, 0px);
   }
   @media ${Device.tabletS} {
-  height: 700px;
+    height: 700px;
     transform: translate3d(0px, 3449px, 0px);
   }
   @media ${Device.mobileL} {

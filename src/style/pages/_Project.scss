@@ -1,0 +1,77 @@
+.project-container {
+  min-height: 125vh;
+
+  //! @media 375px
+  @include respond(mobileM) {
+    min-height: 100vh;
+  }
+
+  .title {
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &.page-title {
+      position: fixed;
+      top: 10rem;
+      left: 6vw;
+      z-index: -1;
+      white-space: nowrap;
+      font-size: calc(4vw + 11rem);
+      line-height: 0.975;
+      color: #12131de4;
+      opacity: 0.5;
+      font-family: "Bangers", cursive;
+
+      @include zero;
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: calc(4vw + 7rem);
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        font-size: calc(3vw + 7rem);
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        text-align: center;
+      }
+    }
+
+    .title-offset {
+      display: block;
+      margin-left: 25%;
+      margin-top: 3%;
+      font-size: calc(4vw + 9rem);
+      font-family: "Bangers", cursive;
+
+      //! @media 550px
+      @include respond(tabletM) {
+        font-size: calc(4vw + 6rem);
+      }
+
+      //! @media 480px
+      @include respond(mobileL) {
+        font-size: calc(3vw + 5rem);
+        margin-left: 15%;
+      }
+
+      //! @media 375px
+      @include respond(mobileM) {
+        margin-left: 0;
+        margin-top: 7%;
+      }
+    }
+  }
+  .section-project {
+    max-width: 90%;
+    margin: 80px auto;
+  }
+}
+.footer-project {
+  width: 100%;
+  height: 13rem;
+}

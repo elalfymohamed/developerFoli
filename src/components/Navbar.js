@@ -4,19 +4,20 @@ import { Link } from "gatsby"
 // Framer Motion
 import { motion } from "framer-motion"
 //Components
-import { PageLink } from "../constants"
+import PageLink from "../constants/Links"
 import useMousePosition from "../hooks/useMousePosition"
 import ThemeToggler from "../theme/ThemeToggler"
-import Context from "../store/context"
+import { GlobalContext } from "../store/GlobalStateProvider"
 
 const Navbar = () => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
   //
   const [condition, setCondition] = useState(false)
   const [cursorHovered, seCursorHovered] = useState(false)
 
   const { x, y } = useMousePosition()
+
   // ClassName
   const MODAL_OPEN = "navbar_active"
   const OPEN_NAV = "effect-links"
@@ -27,12 +28,14 @@ const Navbar = () => {
       document.querySelectorAll(".nav-links li").forEach(link => {
         link.classList.add(OPEN_NAV)
       })
-    }
-    return () => {
+    } else {
       document.body.classList.remove(MODAL_OPEN)
       document.querySelectorAll(".nav-links li").forEach(link => {
         link.classList.remove(OPEN_NAV)
       })
+    }
+    return () => {
+      setCondition(!condition)
     }
   }, [condition])
 
@@ -58,7 +61,7 @@ const Navbar = () => {
             <span
               className={state.isDark ? "logo-name dark_mode" : "logo-name"}
             >
-              Elafy Mohamed
+              Elalfy Mohamed
             </span>
             <span className="grey-color">/&gt;</span>
           </Link>
@@ -69,8 +72,6 @@ const Navbar = () => {
               aria-label="Toggle navigation"
               type="button"
               tabIndex={`${condition ? "0" : "-1"}`}
-              role="checkbox"
-              aria-checked={condition ? false : true}
               data-toggle="collapse"
               aria-controls="navbarNav"
               onClick={() => setCondition(!condition)}

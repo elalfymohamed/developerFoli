@@ -8,11 +8,10 @@ import { gsap } from "gsap"
 // Gsap ScrollTrigger
 import { ScrollTrigger } from "gsap/src/ScrollTrigger"
 //Components
-import { SocialLink } from "../constants"
+import SocialLink from "../constants/SocialLink"
 import TotalHome from "../svg/home/TotalHome"
-import Context from "../store/context"
-// style
-import * as Styles from "../style/module/Hero.module.scss"
+import { GlobalContext } from "../store/GlobalStateProvider"
+import "../assets/gif/loaderGif.gif"
 
 // Graphql
 const query = graphql`
@@ -28,11 +27,9 @@ const query = graphql`
 
 const Hero = () => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
   // Graphql Image
   const data = useStaticQuery(query)
-  const image = getImage(data.file)
-  const alt = data.file.name
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -43,17 +40,17 @@ const Hero = () => {
         gsap.from(batch, { opacity: 0, y: -100, duration: 1, stagger: 0.25 }),
       // markers: true,
     })
-  })
+  }, [])
 
   return (
-    <section className={Styles.hero_center}>
+    <section className="hero_center">
       <TotalHome />
-      <div className={(Styles.section_center, Styles.hero__)}>
-        <article className={Styles.hero_info}>
-          <div className={Styles.hero_title}>
-            <h1 className={`animate___`}>
+      <div className="section_center hero__">
+        <article className="hero_info">
+          <div className="hero_title">
+            <h1 className="animate___">
               Hello, I&rsquo;m El-alfy{" "}
-              <span role="img" aria-label="img" className={Styles.wave_emoji}>
+              <span role="img" aria-label="img" className="wave_emoji">
                 👋
               </span>
             </h1>
@@ -74,13 +71,17 @@ const Hero = () => {
               }`}
             >
               I am a <strong>Front-End Developer </strong> living in Egypt 🇪🇬, I
-              mostly work with <strong>JavaScript</strong> (React, GatsbyJs,
-              NextJs).
+              mostly work with <strong>JavaScript</strong> (Vue, React,
+              GatsbyJs, NextJs).
             </p>
-            <SocialLink styleClass={`${Styles.hero_links} animate___`} />
+            <SocialLink styleClass="hero_links animate___" />
           </div>
         </article>
-        <GatsbyImage image={image} alt={alt} className={Styles.hero_img} />
+        <GatsbyImage
+          image={getImage(data.file)}
+          alt={data.file.name}
+          className="hero_img"
+        />
       </div>
     </section>
   )

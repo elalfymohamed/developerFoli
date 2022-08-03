@@ -1,14 +1,17 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 // Gatsby image
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // Gatsby
 import { graphql, useStaticQuery } from "gatsby"
 // Styled Components
-import styled from "styled-components"
+
+import styled from "@emotion/styled"
+
 // Images
 import build from "../assets/icon/build.svg"
 import curved from "../assets/icon/curved.svg"
 import sound from "../assets/sounds/Ta-Dah-For-CCM026901.mp3"
+// import sound from "../assets/sounds/download.mp3"
 // media device
 import { Device } from "../svg/Device"
 
@@ -27,12 +30,17 @@ const GitImage = () => {
   const data = useStaticQuery(query)
   const image = getImage(data.file)
   const alt = data.file.name
+  const beepRef = useRef(null)
+  const curvedRef = useRef(null)
 
   useEffect(() => {
-    document.getElementById("curved").addEventListener("click", () => {
-      document.getElementById("beep").play()
+    const audio = beepRef.current
+    const curved = curvedRef.current
+
+    curved.addEventListener("click", () => {
+      audio.play()
     })
-  })
+  }, [])
 
   return (
     <>
@@ -45,19 +53,21 @@ const GitImage = () => {
         />
       </Div>
       <Build>
-        <img src={build} alt="build" style={{ width: `4rem` }} />
+        <img
+          src={build}
+          alt="build"
+          style={{ width: `4rem`, height: `4rem` }}
+        />
       </Build>
-      <Curved id="curved">
-        <audio src={sound} id="beep">
+      <Curved ref={curvedRef}>
+        <audio src={sound} ref={beepRef}>
           <source src={sound} type="audio/mpeg" />
-          <track
-            src="fgsubtitles_en.vtt"
-            kind="subtitles"
-            srcLang="en"
-            label="English"
-          />
         </audio>
-        <img src={curved} alt="curved" style={{ width: `3rem` }} />
+        <img
+          src={curved}
+          alt="curved"
+          style={{ width: `3rem`, height: `3rem` }}
+        />
       </Curved>
     </>
   )

@@ -5,10 +5,10 @@
 /* ========= 
   Body
 ========= */
-$color-body-dark: #b9f1da;
-$back-body-dark: #141821;
-$color-body-light: #12131d;
-$back-body-light: #f6f6f6;
+$color-dark: #f6f6f6;
+$bg-dark: #16141a;
+$color-light: #2c3e50;
+$bg-light: #f6f6f6;
 $font-body: clamp(1.5rem, 4vw, 5rem);
 $align-center: center;
 
@@ -20,7 +20,11 @@ $line-transform: rotate(45deg);
 $line-transition: all 1.5s ease-out;
 $-transform-origin: 1px;
 $back-line: #ea5455;
-$navbar-links-back: linear-gradient(to right, rgb(102, 45, 140) 0%, rgb(237, 30, 121) 100%);
+$navbar-links-back: linear-gradient(
+  to right,
+  rgb(102, 45, 140) 0%,
+  rgb(237, 30, 121) 100%
+);
 $navbar-lin-clip-path: circle(60px at 100% -18%);
 $-links-transition: all 1.5s ease-out;
 $-color: #fff;

@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 //Components
+import { GlobalContext } from "../../store/GlobalStateProvider"
+
 import Animate from "../../svg/Animate2"
-import icon from "../../assets/icon/am25.svg"
+import icon from "../../assets/icon/icon_A.svg"
 
 const Footer = ({ setClassFooter }) => {
+  const { state } = useContext(GlobalContext)
   return (
     <footer className={setClassFooter ? setClassFooter : "footer"}>
       <Animate />
@@ -35,11 +38,12 @@ const Footer = ({ setClassFooter }) => {
               />
             </video>
           </div>
-          <p style={{ color: "#f6f6f6" }}>
+          <p style={{ color: state.isDark ? "#f6f6f6" : "#16141a" }}>
             Copyright © 2020 - {new Date().getFullYear()} Elalfy Mohamed. All
             rights reserved.
           </p>
         </div>
+
         <img className="footer-icon" src={icon} alt="icon" />
       </div>
     </footer>
@@ -47,8 +51,8 @@ const Footer = ({ setClassFooter }) => {
 }
 
 Footer.prototype = {
-  // setClassFooter: PropTypes.string.isRequired,
-  setClassFooter: PropTypes.bool,
+  setClassFooter: PropTypes.string.isRequired,
+  // setClassFooter: PropTypes.bool,
 }
 
 export default Footer

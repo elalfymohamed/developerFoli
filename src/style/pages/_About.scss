@@ -5,7 +5,11 @@
 
   //! @media 375px
   @include respond(mobileM) {
-    height: calc(100vh - 200px);
+    height: calc(100vh - -73px) !important;
+  }
+
+  @media screen and (max-width: 423px) {
+    height: calc(100vh - 24px);
   }
 
   .about-center {

@@ -1,5 +1,9 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+
+import styled from "@emotion/styled"
+
+import { keyframes } from "@emotion/react"
+
 import { Device } from "./Device"
 
 const g94xf = keyframes`
@@ -43,10 +47,10 @@ const Cow = styled.svg`
     animation: 20s linear 0s infinite alternate none running ${g94xf};
   }
   @media ${Device.tabletM} {
-  height: 22vh;
+    height: 22vh;
   }
-   @media ${Device.tabletS} {
-  height: 19vh;
+  @media ${Device.tabletS} {
+    height: 19vh;
   }
   @media ${Device.mobileL} {
     height: 18vh;

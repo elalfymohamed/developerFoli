@@ -5,13 +5,21 @@
 }
 
 html[data-theme="dark"] {
-  background-color: #16141a;
+  background-color: $bg-dark;
+  color: $color-dark;
   // background: linear-gradient(to right, #3a6186, #89253e);
-  color: #f6f6f6;
+  ::selection {
+    background-color: $bg-light;
+    color: $color-light;
+  }
 }
 html[data-theme="light"] {
-  background-color: $back-body-light;
-  color: #16141a;
+  background-color: $bg-light;
+  color: $color-light;
+  ::selection {
+    background-color: $bg-dark;
+    color: $color-dark;
+  }
 }
 
 html {
@@ -19,9 +27,10 @@ html {
 }
 
 body {
-  @include zero;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100vw;
+  min-height: 100vh;
   font-size: 2rem;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
@@ -29,11 +38,6 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
   direction: ltr;
-}
-
-::selection {
-  background: #12131d;
-  color: #fff;
 }
 
 ul {

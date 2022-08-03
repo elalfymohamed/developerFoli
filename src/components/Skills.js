@@ -5,9 +5,11 @@ import { graphql, useStaticQuery } from "gatsby"
 //Components
 import { imagesData } from "../data/SkillsData"
 import TotalSkills from "../svg/skills/TotalSkills"
-import Context from "../store/context"
+import { GlobalContext } from "../store/GlobalStateProvider"
 // Image
 import zap from "../assets/icon/iconfinder_zap_298890.svg"
+import github_dark from "../assets/skills/github_dark.svg"
+import nextJs_dark from "../assets/skills/next-js_dark.svg"
 
 // graphql
 const query = graphql`
@@ -22,17 +24,18 @@ const query = graphql`
 `
 const Skills = () => {
   // Theme
-  const { state } = useContext(Context)
+  const { state } = useContext(GlobalContext)
   // Graphql Image
   const data = useStaticQuery(query)
   const image = getImage(data.file)
   const alt = data.file.name
+
   return (
     <>
       <section className="skills-page skills-center">
         <div className="skills-container">
           <div className="skills-image-div flex animate___">
-            <GatsbyImage image={image} alt={alt} />
+            <GatsbyImage image={image} alt={alt} height="100" width="100" />
           </div>
           <article className="skills-text- flex animate___">
             <h3 className="skills-heading"> What i do </h3>
@@ -50,7 +53,18 @@ const Skills = () => {
                         className="software-skills-inline"
                         name={name}
                       >
-                        <img src={img} alt={name} width="100%" height="100%" />
+                        <img
+                          src={
+                            state.isDark && name === "NextJs"
+                              ? nextJs_dark
+                              : state.isDark && name === "Github"
+                              ? github_dark
+                              : img
+                          }
+                          alt={name}
+                          width="100%"
+                          height="100%"
+                        />
                         <p
                           style={{
                             color: `${
@@ -79,9 +93,10 @@ const Skills = () => {
                     margin: `0 0.05em 0 0.01em`,
                     verticalAlign: `-0.1em`,
                   }}
+                  width="1em"
+                  height="1em"
                 />
                 <span>
-                  {" "}
                   Develop highly interactive Front end / User Interfaces for
                   your web and mobile applications
                 </span>

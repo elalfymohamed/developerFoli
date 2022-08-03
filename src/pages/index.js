@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react"
 
-import { ScrollTop } from "../constants"
-import { Seo, OpenSource, Hero, Skills, Layout } from "../components"
+import Seo from "../components/Seo"
+import OpenSource from "../components/OpenSource"
+import Hero from "../components/Hero"
+import Skills from "../components/Skills"
+import Layout from "../components/Layout"
+import ScrollTop from "../constants/ScrollTop"
 
 export default function Home() {
   let Inner
